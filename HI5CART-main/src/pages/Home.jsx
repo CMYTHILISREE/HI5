@@ -30,19 +30,19 @@ export default function Home() {
       <VideoShowcase />
 
       {/* TRENDING ROW */}
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4">
         <ProductRow products={categoryProducts} onViewDetails={setSelectedProduct} />
       </div>
 
       {/* DEALS SECTION */}
-      <section className="max-w-7xl mx-auto px-4 py-8">
-        <h2 className="mb-4 bg-[linear-gradient(90deg,_#ef4444_0%,_#f59e0b_32%,_#22c55e_65%,_#2563eb_100%)] bg-clip-text text-xl font-black text-transparent">
+      <section className="max-w-7xl mx-auto px-3 sm:px-4 py-6 sm:py-8">
+        <h2 className="mb-3 sm:mb-4 bg-[linear-gradient(90deg,_#ef4444_0%,_#f59e0b_32%,_#22c55e_65%,_#2563eb_100%)] bg-clip-text text-lg sm:text-xl font-black text-transparent">
           Deals of the Day 🔥
         </h2>
 
-        <div className="flex gap-5 overflow-x-auto pb-2 scrollbar-hide">
+        <div className="flex gap-3 sm:gap-5 overflow-x-auto pb-2 scrollbar-hide">
           {categoryProducts.map((p) => (
-            <div key={p.id} className="min-w-[260px]">
+            <div key={p.id} className="min-w-[200px] sm:min-w-[260px]">
               <ProductCard product={p} onViewDetails={setSelectedProduct} />
             </div>
           ))}
@@ -50,12 +50,12 @@ export default function Home() {
       </section>
 
       {/* GRID PRODUCTS */}
-      <section className="max-w-7xl mx-auto px-4 pb-10">
-        <h2 className="mb-4 bg-[linear-gradient(90deg,_#ef4444_0%,_#f59e0b_32%,_#22c55e_65%,_#2563eb_100%)] bg-clip-text text-xl font-black text-transparent">
+      <section className="max-w-7xl mx-auto px-3 sm:px-4 pb-8 sm:pb-10">
+        <h2 className="mb-3 sm:mb-4 bg-[linear-gradient(90deg,_#ef4444_0%,_#f59e0b_32%,_#22c55e_65%,_#2563eb_100%)] bg-clip-text text-lg sm:text-xl font-black text-transparent">
           Recommended for You
         </h2>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {categoryProducts.map((p) => (
             <ProductCard key={p.id} product={p} onViewDetails={setSelectedProduct} />
           ))}

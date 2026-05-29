@@ -49,16 +49,16 @@ export default function Header() {
       <div
         className="
           max-w-7xl mx-auto
-          px-4 md:px-6
-          py-3.5
-          flex items-center gap-5
+          px-3 sm:px-4 md:px-6
+          py-2.5 sm:py-3.5
+          flex items-center gap-3 sm:gap-5
         "
       >
         {/* LOGO */}
         <Link
           to="/"
           className="
-            text-3xl md:text-4xl
+            text-2xl sm:text-3xl md:text-4xl
             font-black
             tracking-tight
             whitespace-nowrap
@@ -80,7 +80,7 @@ export default function Header() {
         {/* SEARCH */}
         <div
           className="
-            flex flex-1 items-center
+            hidden sm:flex flex-1 items-center
             rounded-2xl
             overflow-hidden
             border border-orange-100
@@ -97,7 +97,7 @@ export default function Header() {
             placeholder="Search for products, brands & more"
             className="
               w-full
-              px-5 py-3
+              px-4 sm:px-5 py-2.5 sm:py-3
               bg-transparent
               outline-none
               text-sm
@@ -111,30 +111,30 @@ export default function Header() {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.95 }}
             className="
-              px-5 py-3
+              px-4 sm:px-5 py-2.5 sm:py-3
               bg-[linear-gradient(135deg,_#ef4444_0%,_#f59e0b_42%,_#22c55e_100%)]
               text-white
               shadow-lg shadow-orange-400/25
               transition-all duration-300
             "
           >
-            <Search size={18} />
+            <Search size={16} />
           </motion.button>
         </div>
 
         {/* ACTIONS */}
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-3 sm:gap-5">
           {/* PHONE */}
           <a
             href="tel:+918884695310"
             className="
               hidden
-              lg:flex
+              md:flex
               items-center gap-2
               rounded-2xl
               border border-green-100
               bg-[linear-gradient(135deg,_#f0fdf4_0%,_#ffffff_55%,_#eff6ff_100%)]
-              px-3 py-2.5
+              px-2.5 sm:px-3 py-2 sm:py-2.5
               shadow-[0_8px_24px_rgba(15,23,42,0.06)]
               transition-all duration-300
               hover:-translate-y-0.5
@@ -142,16 +142,16 @@ export default function Header() {
               hover:shadow-green-300/20
             "
           >
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-green-100 text-green-700">
-              <Phone size={17} />
+            <span className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-green-100 text-green-700">
+              <Phone size={14} />
             </span>
 
             <span className="flex flex-col leading-tight">
-              <span className="text-[10px] font-bold uppercase tracking-wide text-slate-400">
+              <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wide text-slate-400">
                 Contact
               </span>
 
-              <span className="text-xs font-black text-slate-800">
+              <span className="text-[10px] sm:text-xs font-black text-slate-800">
                 8884695310
               </span>
             </span>
@@ -169,7 +169,7 @@ export default function Header() {
             >
               <div
                 className="
-                  p-3 rounded-2xl
+                  p-2 sm:p-3 rounded-2xl
                   bg-[linear-gradient(135deg,_#fff7ed_0%,_#fef9c3_40%,_#dcfce7_75%,_#dbeafe_100%)]
                   transition-all duration-300
                   ring-1 ring-yellow-100
@@ -178,7 +178,7 @@ export default function Header() {
                 "
               >
                 <User
-                  size={18}
+                  size={14}
                   className="
                     text-blue-600
                     group-hover:text-purple-600
@@ -189,13 +189,13 @@ export default function Header() {
 
               <span
                 className="
-                  text-xs font-medium mt-1
+                  text-[10px] sm:text-xs font-medium mt-0.5 sm:mt-1
                   text-gray-600
                   group-hover:text-blue-600
                   transition
                 "
               >
-                {isAuthenticated ? `Hi, ${user?.name}` : "Account"}
+                {isAuthenticated ? `Hi, ${user?.name?.split(' ')[0]}` : "Account"}
               </span>
             </motion.div>
 
@@ -279,7 +279,7 @@ export default function Header() {
             <motion.div
               whileHover={{ y: -2 }}
               className="
-                p-3 rounded-2xl
+                p-2 sm:p-3 rounded-2xl
                 bg-[linear-gradient(135deg,_#fef2f2_0%,_#fef9c3_35%,_#dcfce7_68%,_#dbeafe_100%)]
                 transition-all duration-300
                 ring-1 ring-yellow-100
@@ -288,6 +288,7 @@ export default function Header() {
               "
             >
               <ShoppingCart
+                size={14}
                 className="
                   text-blue-600
                   group-hover:text-blue-600
@@ -298,13 +299,13 @@ export default function Header() {
 
             <span
               className="
-                text-xs font-medium mt-1
+                text-[10px] sm:text-xs font-medium mt-0.5 sm:mt-1
                 text-gray-600
                 group-hover:text-blue-600
                 transition
               "
             >
-              My Cart
+              Cart
             </span>
 
             {totalItems > 0 && (
@@ -315,12 +316,12 @@ export default function Header() {
                   absolute
                   -top-1
                   right-0
-                  min-w-[20px]
-                  h-5
-                  px-1.5
+                  min-w-[18px] sm:min-w-[20px]
+                  h-4 sm:h-5
+                  px-1 sm:px-1.5
                   flex items-center justify-center
                   rounded-full
-                  text-[11px]
+                  text-[10px] sm:text-[11px]
                   font-bold
                   text-white
                   bg-[linear-gradient(135deg,_#ef4444_0%,_#f59e0b_30%,_#22c55e_62%,_#2563eb_100%)]

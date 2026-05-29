@@ -19,11 +19,11 @@ export default function CategoryBar() {
   return (
     <div className="bg-white/95 border-b border-orange-100 backdrop-blur-sm shadow-sm">
 
-      <div className="max-w-7xl mx-auto px-3 py-2">
+      <div className="max-w-7xl mx-auto px-2 sm:px-3 py-1.5 sm:py-2">
 
         <div className="flex justify-center">
 
-          <div className="flex gap-3 overflow-x-auto scrollbar-hide py-1 px-1">
+          <div className="flex gap-2 sm:gap-3 overflow-x-auto scrollbar-hide py-1 px-1">
 
             {categories.map((cat) => {
               const isActive = active === cat.id || activeSlug === cat.slug;
@@ -34,15 +34,15 @@ export default function CategoryBar() {
                   onClick={() => handleClick(cat)}
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="flex flex-col items-center min-w-[82px] cursor-pointer"
+                  className="flex flex-col items-center min-w-[70px] sm:min-w-[82px] cursor-pointer"
                 >
 
                   {/* ICON BOX */}
                   <div
                     className={`
-                      w-16 h-16
+                      w-12 h-12 sm:w-16 sm:h-16
                       flex items-center justify-center
-                      rounded-[22px]
+                      rounded-[18px] sm:rounded-[22px]
                       transition-all duration-200
                       ${
                         isActive
@@ -54,14 +54,14 @@ export default function CategoryBar() {
                     <img
                       src={cat.img}
                       alt={cat.name}
-                      className="w-10 h-10 object-contain"
+                      className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
                     />
                   </div>
 
                   {/* LABEL */}
                   <span
                     className={`
-                      mt-1.5 text-[12px] font-semibold text-center leading-tight
+                      mt-1 sm:mt-1.5 text-[10px] sm:text-[12px] font-semibold text-center leading-tight
                       ${
                         isActive
                           ? "text-orange-600"
