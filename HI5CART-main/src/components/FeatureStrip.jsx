@@ -20,21 +20,21 @@ export default function FeatureStrip() {
   ];
 
   return (
-    <div className="mt-6 flex justify-center px-3">
+    <div className="mt-4 sm:mt-6 flex justify-center px-2 sm:px-3">
       
-      <div className="w-full max-w-[1100px] bg-black rounded-full px-4 py-3 flex items-center justify-between gap-4">
+      <div className="w-full max-w-[1100px] bg-black rounded-full px-2 sm:px-3 md:px-4 py-2 sm:py-3 flex items-center justify-between gap-1 sm:gap-2 md:gap-4">
         
         {features.map((item, i) => (
           <motion.div
             key={i}
             whileHover={{ scale: 1.02 }}
             className="
-              flex items-center justify-center gap-2   /* ✅ balanced gap */
+              flex items-center justify-center gap-1 sm:gap-2
               bg-gray-100
-              rounded-xl
-              px-1 py-1               /* ✅ better spacing */
+              rounded-lg sm:rounded-xl
+              px-1 sm:px-1.5 md:px-2 py-1 sm:py-1.5
               flex-1
-              max-w-[300px]
+              max-w-[100px] sm:max-w-[200px] md:max-w-[300px]
               mx-auto
             "
           >
@@ -43,15 +43,15 @@ export default function FeatureStrip() {
             <img
               src={item.img}
               alt={item.title}
-              className="w-20 h-20 object-contain flex-shrink-0"
+              className="w-10 h-10 sm:w-14 sm:h-14 md:w-20 md:h-20 object-contain flex-shrink-0"
             />
 
             {/* TEXT */}
             <div className="text-center leading-tight">
-              <p className="text-[20px] font-semibold text-purple-800">
+              <p className="text-[10px] sm:text-[14px] md:text-[20px] font-semibold text-purple-800">
                 {item.title}
               </p>
-              <p className="text-[20px] text-gray-600">
+              <p className="text-[10px] sm:text-[14px] md:text-[20px] text-gray-600">
                 {item.sub}
               </p>
             </div>

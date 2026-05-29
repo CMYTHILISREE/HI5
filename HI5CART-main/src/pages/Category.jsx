@@ -43,28 +43,28 @@ export default function Category() {
     <div className="bg-gray-100 min-h-screen">
       <Header />
       <CategoryBar />
-      <div className="max-w-7xl mx-auto p-6">
-        <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:p-6">
+        <div className="mb-4 sm:mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h1 className="text-3xl font-bold">
+            <h1 className="text-2xl sm:text-3xl font-bold">
               {category ? category.name : 'Category not found'}
             </h1>
             {category && (
-              <p className="mt-2 text-gray-600">
+              <p className="mt-1 sm:mt-2 text-sm sm:text-base text-gray-600">
                 {categoryProducts.length} product{categoryProducts.length !== 1 ? 's' : ''} available.
               </p>
             )}
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-2 sm:gap-3">
             <Link
               to="/"
-              className="rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50"
+              className="rounded-lg sm:rounded-xl border border-gray-300 bg-white px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-50"
             >
               Back to Home
             </Link>
             <Link
               to="/products"
-              className="rounded-xl bg-red-500 px-4 py-3 text-sm font-medium text-white hover:bg-red-600"
+              className="rounded-lg sm:rounded-xl bg-red-500 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm font-medium text-white hover:bg-red-600"
             >
               View All Products
             </Link>
@@ -72,17 +72,17 @@ export default function Category() {
         </div>
 
         {!category ? (
-          <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center text-gray-600">
-            <p className="text-lg font-semibold">The category you selected could not be found.</p>
-            <p className="mt-2">Please choose another category from the home page.</p>
+          <div className="rounded-2xl sm:rounded-3xl border border-gray-200 bg-white p-4 sm:p-8 text-center text-gray-600">
+            <p className="text-base sm:text-lg font-semibold">The category you selected could not be found.</p>
+            <p className="mt-2 text-sm">Please choose another category from the home page.</p>
           </div>
         ) : categoryProducts.length === 0 ? (
-          <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center text-gray-600">
-            <p className="text-lg font-semibold">No products found in this category.</p>
-            <p className="mt-2">Try another category or view all products.</p>
+          <div className="rounded-2xl sm:rounded-3xl border border-gray-200 bg-white p-4 sm:p-8 text-center text-gray-600">
+            <p className="text-base sm:text-lg font-semibold">No products found in this category.</p>
+            <p className="mt-2 text-sm">Try another category or view all products.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-3 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {categoryProducts.map((product) => (
               <ProductCard key={product.id} product={product} onViewDetails={openProductDetails} />
             ))}
