@@ -70,7 +70,7 @@ export default function HeroSlider() {
   ];
 
   return (
-    <div className="w-full max-w-[1700px] mx-auto px-3 md:px-6 mt-5">
+    <div className="w-full max-w-[1700px] mx-auto px-2 sm:px-3 md:px-6 mt-3 sm:mt-5">
 
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
@@ -84,7 +84,7 @@ export default function HeroSlider() {
         pagination={{
           clickable: true,
         }}
-        className="rounded-[40px] overflow-hidden"
+        className="rounded-2xl sm:rounded-[40px] overflow-hidden"
       >
         {banners.map((item, i) => (
           <SwiperSlide key={i}>
@@ -92,13 +92,14 @@ export default function HeroSlider() {
               className={`
                 relative
                 overflow-hidden
-                rounded-[40px]
+                rounded-2xl sm:rounded-[40px]
                 ${item.bg}
-                aspect-[16/8]
-                sm:aspect-[16/7]
-                md:aspect-[16/6]
-                lg:aspect-[16/5]
-                shadow-[0_20px_60px_rgba(0,0,0,0.15)]
+                aspect-[16/10]
+                sm:aspect-[16/8]
+                md:aspect-[16/7]
+                lg:aspect-[16/6]
+                xl:aspect-[16/5]
+                shadow-[0_10px_40px_rgba(0,0,0,0.15)]
               `}
             >
 
@@ -186,9 +187,10 @@ export default function HeroSlider() {
                   right-0
                   top-0
                   h-full
-                  w-[58%]
+                  w-[45%]
+                  sm:w-[58%]
                   flex items-center justify-end
-                  pr-4 md:pr-10
+                  pr-2 sm:pr-4 md:pr-10
                   z-10
                 "
               >
@@ -251,7 +253,7 @@ export default function HeroSlider() {
               <div className="
                 absolute inset-0 z-20
                 flex items-center
-                px-6 sm:px-10 md:px-16 lg:px-24
+                px-3 sm:px-6 md:px-10 lg:px-16 xl:px-24
               ">
 
                 <motion.div
@@ -264,7 +266,7 @@ export default function HeroSlider() {
                     duration: 5,
                     repeat: Infinity,
                   }}
-                  className="max-w-[540px]"
+                  className="max-w-[280px] sm:max-w-[400px] md:max-w-[540px]"
                 >
 
                  {/* PREMIUM LABEL */}
@@ -280,11 +282,11 @@ export default function HeroSlider() {
   }}
   className="
     relative
-    inline-flex items-center gap-4
-    px-6 py-3
-    rounded-2xl
+    inline-flex items-center gap-2 sm:gap-4
+    px-3 sm:px-4 md:px-6 py-2 sm:py-3
+    rounded-xl sm:rounded-2xl
     overflow-hidden
-    mb-7
+    mb-4 sm:mb-7
 
     bg-[linear-gradient(135deg,_rgba(251,191,36,0.20)_0%,_rgba(255,248,220,0.14)_45%,_rgba(255,255,255,0.08)_100%)]
 
@@ -319,8 +321,8 @@ export default function HeroSlider() {
   <div
     className="
       relative z-10
-      w-11 h-11
-      rounded-xl
+      w-8 h-8 sm:w-11 sm:h-11
+      rounded-lg sm:rounded-xl
 
       bg-[linear-gradient(135deg,_#fbbf24_0%,_#f59e0b_45%,_#ea580c_100%)]
 
@@ -329,7 +331,7 @@ export default function HeroSlider() {
       shadow-[0_8px_24px_rgba(251,191,36,0.45)]
     "
   >
-    <span className="text-white text-lg">
+    <span className="text-white text-sm sm:text-lg">
       ✦
     </span>
   </div>
@@ -340,9 +342,9 @@ export default function HeroSlider() {
     <span
       className="
         text-amber-100/80
-        text-[10px]
+        text-[8px] sm:text-[10px]
         uppercase
-        tracking-[4px]
+        tracking-[2px] sm:tracking-[4px]
         font-semibold
       "
     >
@@ -352,8 +354,7 @@ export default function HeroSlider() {
     <span
       className="
         text-white
-        text-base
-        md:text-lg
+        text-xs sm:text-base md:text-lg
         font-bold
         tracking-wide
       "
@@ -369,12 +370,13 @@ export default function HeroSlider() {
                   <h1 className="
                     text-white
                     font-black
-                    leading-[1]
+                    leading-[1.1]
                     tracking-tight
-                    text-4xl
-                    sm:text-5xl
-                    md:text-6xl
-                    lg:text-7xl
+                    text-2xl
+                    sm:text-3xl
+                    md:text-4xl
+                    lg:text-5xl
+                    xl:text-6xl
                     drop-shadow-2xl
                   ">
                     {item.title}
@@ -382,45 +384,45 @@ export default function HeroSlider() {
 
                   {/* SUBTITLE */}
                   <p className="
-                    mt-6
+                    mt-3 sm:mt-4 md:mt-6
                     text-white/80
-                    text-sm sm:text-base md:text-lg
+                    text-xs sm:text-sm md:text-base lg:text-lg
                     leading-relaxed
-                    max-w-[500px]
+                    max-w-[280px] sm:max-w-[400px] md:max-w-[500px]
                   ">
                     {item.subtitle}
                   </p>
 
                   {/* STATS */}
                   <div className="
-                    flex gap-8
-                    mt-10
+                    flex gap-4 sm:gap-6 md:gap-8
+                    mt-6 sm:mt-8 md:mt-10
                     flex-wrap
                   ">
 
                     <div>
-                      <h3 className="text-white text-2xl font-bold">
+                      <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold">
                         10K+
                       </h3>
-                      <p className="text-white/70 text-sm">
+                      <p className="text-white/70 text-[10px] sm:text-xs md:text-sm">
                         Happy Customers
                       </p>
                     </div>
 
                     <div>
-                      <h3 className="text-white text-2xl font-bold">
+                      <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold">
                         Premium
                       </h3>
-                      <p className="text-white/70 text-sm">
+                      <p className="text-white/70 text-[10px] sm:text-xs md:text-sm">
                         Modern Quality
                       </p>
                     </div>
 
                     <div>
-                      <h3 className="text-white text-2xl font-bold">
+                      <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold">
                         Elegant
                       </h3>
-                      <p className="text-white/70 text-sm">
+                      <p className="text-white/70 text-[10px] sm:text-xs md:text-sm">
                         Stylish Designs
                       </p>
                     </div>

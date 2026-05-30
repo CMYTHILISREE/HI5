@@ -37,15 +37,15 @@ export default function Home() {
       {/* DEALS SECTION */}
       <section className="max-w-7xl mx-auto px-3 sm:px-4 py-6 sm:py-8">
         <h2 className="mb-3 sm:mb-4 bg-[linear-gradient(90deg,_#ef4444_0%,_#f59e0b_32%,_#22c55e_65%,_#2563eb_100%)] bg-clip-text text-lg sm:text-xl font-black text-transparent">
-          Deals of the Day 🔥
+          Today's Deal 🔥
         </h2>
 
-        <div className="flex gap-3 sm:gap-5 overflow-x-auto pb-2 scrollbar-hide">
-          {categoryProducts.map((p) => (
-            <div key={p.id} className="min-w-[200px] sm:min-w-[260px]">
-              <ProductCard product={p} onViewDetails={setSelectedProduct} />
+        <div className="flex justify-center">
+          {categoryProducts.length > 0 && (
+            <div className="w-full max-w-[300px] sm:max-w-[400px]">
+              <ProductCard product={categoryProducts[0]} onViewDetails={setSelectedProduct} />
             </div>
-          ))}
+          )}
         </div>
       </section>
 
