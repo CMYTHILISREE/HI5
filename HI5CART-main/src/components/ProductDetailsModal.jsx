@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { addToCart } from "../store/slices/cartSlice";
 import PriceDisplay from "./PriceDisplay";
 
@@ -30,12 +31,21 @@ export default function ProductDetailsModal({ product, onClose }) {
             <p className="text-[10px] sm:text-sm font-bold uppercase tracking-wide text-red-500">{product.category}</p>
             <h2 className="mt-0.5 sm:mt-1 text-lg sm:text-2xl md:text-3xl font-black text-gray-900 line-clamp-2">{product.name}</h2>
           </div>
-          <button
-            onClick={onClose}
-            className="rounded-full bg-gray-100 px-3 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-sm font-semibold text-gray-700 hover:bg-gray-200 flex-shrink-0"
-          >
-            Close
-          </button>
+          <div className="flex gap-2">
+            <Link
+              to="/"
+              onClick={onClose}
+              className="rounded-full bg-blue-500 px-3 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-sm font-semibold text-white hover:bg-blue-600 flex-shrink-0"
+            >
+              Home
+            </Link>
+            <button
+              onClick={onClose}
+              className="rounded-full bg-gray-100 px-3 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-sm font-semibold text-gray-700 hover:bg-gray-200 flex-shrink-0"
+            >
+              Close
+            </button>
+          </div>
         </div>
 
         <div className="grid gap-4 sm:gap-5 lg:grid-cols-[minmax(0,1.35fr)_380px]">
