@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 export default function Footer() {
@@ -49,39 +50,62 @@ export default function Footer() {
           </h3>
 
           <ul className="space-y-3 text-gray-700 text-sm">
-            {["Home", "About", "Contact", "Shop"].map((item) => (
-              <li
-                key={item}
-                className="hover:text-blue-600 hover:translate-x-1 transition cursor-pointer"
-              >
-                {item}
-              </li>
-            ))}
+            <li>
+              <Link to="/" className="hover:text-blue-600 hover:translate-x-1 transition inline-block">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/products" className="hover:text-blue-600 hover:translate-x-1 transition inline-block">
+                Shop All Products
+              </Link>
+            </li>
+            <li>
+              <Link to="/cart" className="hover:text-blue-600 hover:translate-x-1 transition inline-block">
+                View Cart
+              </Link>
+            </li>
+            <li>
+              <Link to="/orders" className="hover:text-blue-600 hover:translate-x-1 transition inline-block">
+                Track Order
+              </Link>
+            </li>
           </ul>
         </div>
 
         {/* RIGHT - CUSTOMER SERVICE */}
         <div>
           <h3 className="text-lg font-semibold mb-5 relative inline-block">
-            Customer Service
+            Policies
             <span className="block h-[2px] w-14 bg-[linear-gradient(90deg,_#ef4444_0%,_#f59e0b_35%,_#22c55e_70%,_#2563eb_100%)] mt-1 rounded"></span>
           </h3>
 
           <ul className="space-y-3 text-gray-700 text-sm">
-            {[
-              "Contact Us",
-              "Privacy Policy",
-              "Payment Policy",
-              "Shipping Policy",
-              "Returns & Exchange Policy",
-            ].map((item) => (
-              <li
-                key={item}
-                className="hover:text-blue-600 hover:translate-x-1 transition cursor-pointer"
-              >
-                {item}
-              </li>
-            ))}
+            <li>
+              <Link to="/privacy-policy" className="hover:text-blue-600 hover:translate-x-1 transition inline-block">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link to="/terms-and-conditions" className="hover:text-blue-600 hover:translate-x-1 transition inline-block">
+                Terms & Conditions
+              </Link>
+            </li>
+            <li>
+              <Link to="/refund-policy" className="hover:text-blue-600 hover:translate-x-1 transition inline-block">
+                Refund & Cancellation Policy
+              </Link>
+            </li>
+            <li>
+              <Link to="/shipping-policy" className="hover:text-blue-600 hover:translate-x-1 transition inline-block">
+                Shipping Policy
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="hover:text-blue-600 hover:translate-x-1 transition inline-block">
+                Contact Us
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
