@@ -48,7 +48,7 @@ export default function ProductDetailsModal({ product, onClose }) {
           </div>
         </div>
 
-        <div className="grid gap-4 sm:gap-5 lg:grid-cols-[minmax(0,1.35fr)_380px]">
+        <div className="grid gap-4 sm:gap-5 grid-cols-1 lg:grid-cols-[minmax(0,1.35fr)_380px]">
           <div>
             <div className="relative flex h-[200px] sm:h-[250px] md:h-[300px] lg:h-[420px] items-center justify-center overflow-hidden rounded-2xl sm:rounded-3xl bg-gray-50 p-2 sm:p-4">
               <img

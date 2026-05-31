@@ -51,78 +51,106 @@ export default function Header() {
           max-w-7xl mx-auto
           px-3 sm:px-4 md:px-6
           py-2.5 sm:py-3.5
-          flex items-center gap-3 sm:gap-5
+          flex items-center justify-between
         "
       >
-        {/* LOGO */}
-        <Link
-          to="/"
-          className="
-            text-2xl sm:text-3xl md:text-4xl
-            font-black
-            tracking-tight
-            whitespace-nowrap
-            bg-gradient-to-r
-            from-orange-500
-            via-pink-500
-            to-blue-600
-            bg-clip-text
-            text-transparent
-            drop-shadow-sm
-            hover:scale-105
-            hover:brightness-110
-            transition-all duration-300
-          "
-        >
-          Hi5Cart
-        </Link>
-
-        {/* SEARCH */}
-        <div
-          className="
-            hidden sm:flex flex-1 items-center
-            rounded-2xl
-            overflow-hidden
-            border border-orange-100
-            bg-white
-            transition-all duration-300
-            focus-within:border-orange-300
-            focus-within:ring-2
-            focus-within:ring-orange-100
-            shadow-[0_8px_24px_rgba(15,23,42,0.06)]
-          "
-        >
-          <input
-            type="text"
-            placeholder="Search for products, brands & more"
+        {/* LEFT SIDE - Empty on mobile for centering */}
+        <div className="hidden sm:flex items-center gap-3 sm:gap-5">
+          {/* LOGO */}
+          <Link
+            to="/"
             className="
-              w-full
-              px-4 sm:px-5 py-2.5 sm:py-3
-              bg-transparent
-              outline-none
-              text-sm
-              font-medium
-              text-gray-700
-              placeholder:text-gray-400
-            "
-          />
-
-          <motion.button
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.95 }}
-            className="
-              px-4 sm:px-5 py-2.5 sm:py-3
-              bg-[linear-gradient(135deg,_#ef4444_0%,_#f59e0b_42%,_#22c55e_100%)]
-              text-white
-              shadow-lg shadow-orange-400/25
+              text-2xl sm:text-3xl md:text-4xl
+              font-black
+              tracking-tight
+              whitespace-nowrap
+              bg-gradient-to-r
+              from-orange-500
+              via-pink-500
+              to-blue-600
+              bg-clip-text
+              text-transparent
+              drop-shadow-sm
+              hover:scale-105
+              hover:brightness-110
               transition-all duration-300
             "
           >
-            <Search size={16} />
-          </motion.button>
+            Hi5Cart
+          </Link>
+
+          {/* SEARCH */}
+          <div
+            className="
+              flex flex-1 items-center
+              rounded-2xl
+              overflow-hidden
+              border border-orange-100
+              bg-white
+              transition-all duration-300
+              focus-within:border-orange-300
+              focus-within:ring-2
+              focus-within:ring-orange-100
+              shadow-[0_8px_24px_rgba(15,23,42,0.06)]
+            "
+          >
+            <input
+              type="text"
+              placeholder="Search for products, brands & more"
+              className="
+                w-full
+                px-4 sm:px-5 py-2.5 sm:py-3
+                bg-transparent
+                outline-none
+                text-sm
+                font-medium
+                text-gray-700
+                placeholder:text-gray-400
+              "
+            />
+
+            <motion.button
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.95 }}
+              className="
+                px-4 sm:px-5 py-2.5 sm:py-3
+                bg-[linear-gradient(135deg,_#ef4444_0%,_#f59e0b_42%,_#22c55e_100%)]
+                text-white
+                shadow-lg shadow-orange-400/25
+                transition-all duration-300
+              "
+            >
+              <Search size={16} />
+            </motion.button>
+          </div>
         </div>
 
-        {/* ACTIONS */}
+        {/* CENTER - Logo on mobile only */}
+        <div className="sm:hidden">
+          <Link
+            to="/"
+            className="
+              text-2xl
+              font-black
+              tracking-tight
+              whitespace-nowrap
+              bg-gradient-to-r
+              from-orange-500
+              via-pink-500
+              to-blue-600
+              bg-clip-text
+              text-transparent
+              drop-shadow-sm
+              hover:scale-105
+              hover:brightness-110
+              transition-all duration-300
+            "
+          >
+            Hi5Cart
+          </Link>
+        </div>
+
+        {/* RIGHT SIDE - Actions */}
         <div className="flex items-center gap-3 sm:gap-5">
           {/* PHONE */}
           <a

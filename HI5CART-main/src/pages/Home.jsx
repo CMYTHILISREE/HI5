@@ -30,7 +30,7 @@ export default function Home() {
       <VideoShowcase />
 
       {/* TRENDING ROW */}
-      <div className="max-w-7xl mx-auto px-3 sm:px-4">
+      <div className="hidden sm:block max-w-7xl mx-auto px-3 sm:px-4">
         <ProductRow products={categoryProducts} onViewDetails={setSelectedProduct} />
       </div>
 
