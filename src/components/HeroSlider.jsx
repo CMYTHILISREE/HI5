@@ -183,13 +183,12 @@ export default function HeroSlider() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1 }}
                 className="
-                  hidden
-                  sm:flex
-                  sm:absolute
+                  flex
+                  absolute
                   right-0
                   top-0
                   h-full
-                  w-[45%]
+                  w-full
                   sm:w-[58%]
                   md:w-[52%]
                   items-center justify-end
@@ -254,9 +253,13 @@ export default function HeroSlider() {
 
               {/* CONTENT */}
               <div className="
+                hidden sm:flex
                 absolute inset-0 z-20
-                flex items-center
+                items-center
                 px-3 sm:px-6 md:px-10 lg:px-16 xl:px-24
+                w-1/2
+                sm:w-1/2
+                md:w-1/2
               ">
 
                 <motion.div
